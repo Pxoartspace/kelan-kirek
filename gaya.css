@@ -1,0 +1,800 @@
+/* ==========================================================================
+   DESIGN SYSTEM VARIABLES
+   ========================================================================== */
+:root {
+    /* Colors */
+    --bg-primary: #111111;
+    --bg-secondary: #1A1A1A;
+    --gold: #D4AF37;
+    --gold-hover: #F0D060;
+    --text-primary: #F5F5F0;
+    --text-muted: #999999;
+    --gold-border: rgba(212, 175, 55, 0.3);
+
+    /* Typography - Diogenes sebagai Serif Utama */
+    --font-serif: 'Diogenes', 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'DM Sans', sans-serif;
+
+    --nav-height: 70px;
+    --container-padding: 1.5rem;
+}
+
+/* ==========================================================================
+   BASE & RESET STYLES
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans); /* Default informasi menggunakan Sans-Serif */
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Kunci Scroll saat Entrance Gate aktif */
+body.locked {
+    overflow: hidden;
+    height: 100vh;
+}
+
+img, iframe {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   ENTRANCE GATE (LOCKED COVER SYSTEM)
+   ========================================================================== */
+.entrance-gate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                visibility 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gate-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(17,17,17,0.85), rgba(17,17,17,0.95)), url('background.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.gate-content {
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+}
+
+.gate-meta {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.gate-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.gate-separator {
+    width: 40px;
+    height: 1px;
+    background-color: var(--gold);
+    margin: 2rem auto;
+}
+
+.gate-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.entrance-gate.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY RULES
+   ========================================================================== */
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+
+/* Penerapan khusus Font Diogenes (Serif) */
+.hero-title, 
+.hero-subtitle, 
+.section-title, 
+.artist-name, 
+.ticket-name, 
+.ticket-price, 
+.rundown-day, 
+.countdown-number {
+    font-family: var(--font-serif);
+}
+
+.hero-title {
+    font-size: clamp(2.3rem, 7vw, 4.5rem);
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.4rem, 4vw, 2.3rem);
+    margin-bottom: 0.25rem;
+}
+
+.hero-tagline {
+    font-family: var(--font-sans); /* Tagline informasi menggunakan Sans */
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--gold);
+}
+
+/* Teks Informasi & Narasi menggunakan Sans-Serif */
+.editorial-text p {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 1.8rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* ==========================================================================
+   UTILITIES & SEPARATORS
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.max-w-800 { max-width: 800px; }
+.text-center { text-align: center; }
+.mt-2 { margin-top: 1rem; }
+.mt-4 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 1rem; }
+.bg-secondary { background-color: var(--bg-secondary); }
+
+.separator {
+    height: 1px;
+    background-color: var(--gold-border);
+    margin: 1.5rem 0;
+    width: 100%;
+}
+.separator.center {
+    width: 60px;
+    margin: 1.5rem auto 3rem auto;
+    background-color: var(--gold);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: none;
+    min-height: 48px;
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--bg-primary);
+}
+
+.btn-gold:hover {
+    background-color: var(--bg-primary);
+    color: var(--gold);
+    box-shadow: inset 0 0 0 1px var(--gold);
+}
+
+.btn-entrance {
+    padding: 1.2rem 2.5rem;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+}
+
+/* ==========================================================================
+   STICKY NAVBAR
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gold-border);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 var(--container-padding);
+}
+
+.logo a {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   HERO INTERIOR
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: var(--nav-height);
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.75);
+    z-index: -1;
+}
+
+.hero-content {
+    padding: 0 var(--container-padding);
+    max-width: 850px;
+    z-index: 1;
+}
+
+.hero-details {
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    font-family: var(--font-sans); /* Informasi detail memakai Sans */
+}
+
+.hero-date {
+    color: var(--gold);
+    font-weight: 700;
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+}
+
+/* TIMERS */
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.countdown-box {
+    background: rgba(26, 26, 26, 0.85);
+    border: 1px solid var(--gold-border);
+    padding: 1rem;
+    min-width: 75px;
+    backdrop-filter: blur(5px);
+}
+
+.countdown-number {
+    display: block;
+    font-size: 2.2rem;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.7rem;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+}
+
+.countdown-message {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--gold);
+    padding: 1rem 2rem;
+    border: 1px solid var(--gold);
+    background: rgba(26, 26, 26, 0.9);
+}
+.hidden { display: none !important; }
+
+/* ==========================================================================
+   LAYOUTS & CARDS LAYERS
+   ========================================================================== */
+.section {
+    padding: 5rem 0;
+}
+
+.grid-4, .grid-3, .grid-2 {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+.artist-card, .ticket-card, .info-card, .rundown-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--gold-border);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Artist Elements */
+.artist-card {
+    border-top: 2px solid var(--gold);
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(212, 175, 55, 0.15);
+}
+
+.artist-img-wrapper {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.artist-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artist-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.artist-name {
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.artist-bio {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Ticket Structure */
+.ticket-card {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-name {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ticket-price {
+    font-size: 2.3rem;
+    color: var(--gold);
+}
+
+.ticket-separator {
+    width: 30px;
+    height: 1px;
+    background-color: var(--gold-border);
+    margin: 1.2rem auto;
+}
+
+.ticket-desc {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.vip-card {
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.08);
+}
+
+.vip-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--gold);
+    color: var(--bg-primary);
+    padding: 0.3rem 1.2rem;
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Info Cards & Maps */
+.info-details {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.info-card {
+    padding: 1.5rem;
+    border-left: 2px solid var(--gold);
+}
+
+.info-card h4 {
+    color: var(--gold);
+    font-family: var(--font-sans); /* Judul info kecil pakai Sans */
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-card p {
+    font-family: var(--font-sans);
+}
+
+.info-map {
+    border: 1px solid var(--gold-border);
+    min-height: 320px;
+}
+
+/* Attendance Note */
+.body-text {
+    font-family: var(--font-sans);
+}
+.small-note {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Rundown Layout */
+.rundown-card {
+    padding: 2rem 1.5rem;
+    border-left: 2px solid var(--gold);
+}
+
+.rundown-day {
+    font-size: 1.6rem;
+    color: var(--gold);
+}
+
+.rundown-date {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gold-border);
+    padding-bottom: 0.5rem;
+}
+
+.rundown-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+}
+
+.rundown-list .time {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* Denah Area */
+.denah-wrapper {
+    border: 1px solid var(--gold-border);
+    padding: 1rem;
+    background: var(--bg-secondary);
+}
+
+.denah-img {
+    width: 100%;
+}
+
+.denah-caption {
+    font-family: var(--font-sans);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   FOOTER CORES
+   ========================================================================== */
+.footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--gold-border);
+    padding: 4rem 0 2rem 0;
+    font-family: var(--font-sans);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.footer-section h4 {
+    color: var(--gold);
+    font-family: var(--font-serif); /* Sub-judul di footer tetap Diogenes */
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p, .contact-channels li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.logo-grid-small {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.logo-grid-small img {
+    height: 35px;
+    width: auto;
+    filter: grayscale(100%) opacity(0.6);
+}
+
+.single-logo-wrapper img {
+    height: 50px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   ANIMATIONS ELEMENTS STATES
+   ========================================================================== */
+.fade-element {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-element.triggered {
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.fade-element:nth-child(1) { animation-delay: 0.1s; }
+.fade-element:nth-child(2) { animation-delay: 0.25s; }
+.fade-element:nth-child(3) { animation-delay: 0.4s; }
+.fade-element:nth-child(4) { animation-delay: 0.55s; }
+.fade-element:nth-child(5) { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal, .reveal-stagger {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.active, .reveal-stagger.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1023px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-menu {
+        position: fixed;
+        top: var(--nav-height);
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        background-color: var(--bg-primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        gap: 2.5rem;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    
+    .rundown-list li {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .rundown-list .time {
+        min-width: 100px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    
+    .ticket-grid {
+        align-items: center;
+    }
+    
+    .vip-card {
+        transform: scale(1.05);
+        z-index: 2;
+    }
+    
+    .vip-card:hover {
+        transform: scale(1.05) translateY(-5px);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.2fr 1fr 1.5fr 1.5fr 1.5fr;
+    }
+
+    .parallax-bg {
+        background-attachment: fixed;
+    }
+}
