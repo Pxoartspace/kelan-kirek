@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kelan Kirek Exhibition 2026 - Ad Maiorem Dei Gloriam. Pameran seni rupa kontemporer sebagai medium permenungan iman di Aula Paroki Nita.">
+    <title>Kelan Kirek Exhibition 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="gaya.css">
+    <script src="main.js" defer></script>
+</head>
+<body class="locked">
+
+    <div id="entrance-gate" class="entrance-gate">
+        <div class="gate-bg"></div>
+        <div class="gate-content">
+            <p class="gate-meta">Pameran Seni Rupa Kontemporer</p>
+            <h1 class="gate-title">Kelan Kirek<br>Exhibition 2026</h1>
+            <div class="gate-separator"></div>
+            <h2 class="gate-subtitle">Ad Maiorem Dei Gloriam</h2>
+            <button id="enter-btn" class="btn btn-gold btn-entrance" aria-label="Masuk Ruang Pameran">
+                Masuk Ruang Pameran &rarr;
+            </button>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#hero">KELAN KIREK</a>
+            </div>
+            
+            <button class="hamburger" aria-label="Buka Menu Navigasi">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="#tentang" class="nav-link">Tentang</a></li>
+                <li><a href="#seniman" class="nav-link">Seniman</a></li>
+                <li><a href="#tiket" class="nav-link">Tiket</a></li>
+                <li><a href="#info" class="nav-link">Info</a></li>
+                <li><a href="#rundown" class="nav-link">Rundown</a></li>
+                <li><a href="#denah" class="nav-link">Denah</a></li>
+                <li><a href="#footer" class="nav-link">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero-section">
+        <div class="hero-bg parallax-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title fade-element">Kelan Kirek Exhibition</h1>
+            <h2 class="hero-subtitle fade-element">Ad Maiorem Dei Gloriam</h2>
+            <h3 class="hero-tagline fade-element">Demi Kemuliaan Allah yang Lebih Besar</h3>
+            
+            <div class="hero-details fade-element">
+                <p class="hero-date">12–14 Juni 2026</p>
+                <p class="hero-location">Aula Paroki St. Rafael Nita</p>
+            </div>
+
+            <div class="countdown-wrapper fade-element" id="countdown">
+                <div class="countdown-box">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-label">Hari</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-label">Jam</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-label">Menit</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-label">Detik</span>
+                </div>
+            </div>
+            <div id="countdown-message" class="countdown-message hidden">
+                <p>Pameran Telah Dibuka!</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="tentang" class="section reveal">
+            <div class="container text-center max-w-800">
+                <h2 class="section-title">Tentang Pameran</h2>
+                <div class="separator center"></div>
+                <div class="editorial-text">
+                    <p>
+                        Seni rupa dalam tradisi Gereja Katolik memiliki peran yang mendalam sebagai medium permenungan iman. Sejak masa awal Kekristenan hingga era modern, karya-karya visual telah menjadi sarana untuk menghadirkan misteri Ilahi secara nyata—dapat dilihat, disentuh, dan direnungkan. Patung Kristus tersalib, patung para kudus, hingga simbol-simbol liturgis bukan hanya ornamen, melainkan bahasa iman yang hidup di tengah umat.
+                    </p>
+                    <p>
+                        Pameran seni rupa ini hadir sebagai sebuah upaya untuk menjembatani iman dan kreativitas yang terinspirasi dari Kitab Suci. Pameran ini tidak hanya menjadi ruang apresiasi karya seni, tetapi juga sebagai wadah pembelajaran iman yang reflektif dan mendalam. Melalui proses penciptaan dan apresiasi karya, generasi muda diajak untuk masuk dalam pengalaman kontemplatif: membaca Sabda, merenungkannya, lalu menerjemahkannya ke dalam bentuk visual.
+                    </p>
+                    <p>
+                        Kegiatan ini merupakan bagian dari aksi nyata umat Paroki St. Mikael Malekat Agung Nita (kelompok seni Kelan Kirek, KBG Bunda Pengantara Segala Rahmat, dan Lingkungan St. Fransiskus Asisi Nita Lalat) dalam menghidupi iman secara kontekstual dan menanggapi persiapan kegiatan Nusra Youth Day 2026 yang terjadi di Paroki Nita. Pameran ini diharapkan menjadi ruang perjumpaan antara iman, seni, dan komunitas—di mana umat, khususnya kaum muda, dapat terlibat aktif, belajar bersama, dan bertumbuh dalam iman.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="seniman" class="section reveal">
+            <div class="container">
+                <h2 class="section-title text-center">Seniman</h2>
+                <div class="separator center"></div>
+                
+                <div class="grid-4 artist-grid">
+                    <article class="artist-card reveal-stagger">
+                        <div class="artist-img-wrapper">
+                            <img src="images/seniman-1.jpg" alt="Antonius Wujo" class="artist-img" loading="lazy">
+                        </div>
+                        <div class="artist-info">
+                            <h3 class="artist-name">Antonius Wujo</h3>
+                            <p class="artist-bio">Profil seniman akan ditambahkan kemudian.</p>
+                        </div>
+                    </article>
+
+                    <article class="artist-card reveal-stagger">
+                        <div class="artist-img-wrapper">
+                            <img src="images/seniman-2.jpg" alt="Yongker Jr" class="artist-img" loading="lazy">
+                        </div>
+                        <div class="artist-info">
+                            <h3 class="artist-name">Yongker Jr</h3>
+                            <p class="artist-bio">Profil seniman akan ditambahkan kemudian.</p>
+                        </div>
+                    </article>
+
+                    <article class="artist-card reveal-stagger">
+                        <div class="artist-img-wrapper">
+                            <img src="images/seniman-3.jpg" alt="Thommy Welling" class="artist-img" loading="lazy">
+                        </div>
+                        <div class="artist-info">
+                            <h3 class="artist-name">Thommy Welling</h3>
+                            <p class="artist-bio">Profil seniman akan ditambahkan kemudian.</p>
+                        </div>
+                    </article>
+
+                    <article class="artist-card reveal-stagger">
+                        <div class="artist-img-wrapper">
+                            <img src="images/seniman-4.jpg" alt="Ferry Koli" class="artist-img" loading="lazy">
+                        </div>
+                        <div class="artist-info">
+                            <h3 class="artist-name">Ferry Koli</h3>
+                            <p class="artist-bio">Profil seniman akan ditambahkan kemudian.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="tiket" class="section reveal">
+            <div class="container">
+                <h2 class="section-title text-center">Tiket Masuk</h2>
+                <div class="separator center"></div>
+                
+                <div class="grid-3 ticket-grid">
+                    <div class="ticket-card reveal-stagger">
+                        <h3 class="ticket-name">Paket 1</h3>
+                        <p class="ticket-price">Rp 2.000</p>
+                        <div class="ticket-separator"></div>
+                        <p class="ticket-desc">Masuk Pameran</p>
+                    </div>
+
+                    <div class="ticket-card vip-card reveal-stagger">
+                        <div class="vip-badge">EKSKLUSIF</div>
+                        <h3 class="ticket-name">VIP</h3>
+                        <p class="ticket-price">Rp 25.000</p>
+                        <div class="ticket-separator"></div>
+                        <p class="ticket-desc">Masuk Pameran + Tempat VIP + Mendapatkan Souvenir eksklusif.</p>
+                    </div>
+
+                    <div class="ticket-card reveal-stagger">
+                        <h3 class="ticket-name">Paket 2</h3>
+                        <p class="ticket-price">Rp 3.000</p>
+                        <div class="ticket-separator"></div>
+                        <p class="ticket-desc">Masuk Pameran + Berkesempatan Memenangkan Hadiah Undian Berupa Karya Senilai 1 Jt, 750K, dan 500K</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="info" class="section reveal">
+            <div class="container">
+                <h2 class="section-title text-center">Informasi Pameran</h2>
+                <div class="separator center"></div>
+                
+                <div class="grid-2 info-grid">
+                    <div class="info-details">
+                        <div class="info-card reveal-stagger">
+                            <h4>Tanggal</h4>
+                            <p>12–14 Juni 2026</p>
+                        </div>
+                        <div class="info-card reveal-stagger">
+                            <h4>Jam Buka</h4>
+                            <p>10:00 WITA - Selesai</p>
+                        </div>
+                        <div class="info-card reveal-stagger">
+                            <h4>Lokasi</h4>
+                            <p>Aula Paroki St. Rafael Nita<br>Nusa Tenggara Timur, Indonesia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-map reveal-stagger">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!4v1780339646587!6m8!1m7!1svnCIcsGF3n5tqtN271CN-g!2m2!1d-8.67953295415396!2d122.1680438450159!3f327.95944626256284!4f4.71218664411488!5f0.7820865974627469" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Peta Lokasi Aula Paroki St. Rafael Nita">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="daftar-hadir" class="section reveal bg-secondary">
+            <div class="container text-center max-w-800">
+                <h2 class="section-title">Daftar Hadir</h2>
+                <p class="body-text">Isi daftar hadir digital untuk tercatat sebagai pengunjung resmi pameran kami.</p>
+                
+                <a href="INSERT_ATTENDANCE_FORM_URL_HERE" target="_blank" rel="noopener noreferrer" class="btn btn-gold mt-4">
+                    Isi Daftar Hadir &rarr;
+                </a>
+                
+                <p class="small-note mt-2">Data akan tersimpan secara otomatis ke Google Sheets pihak penyelenggara.</p>
+            </div>
+        </section>
+
+        <section id="rundown" class="section reveal">
+            <div class="container">
+                <h2 class="section-title text-center">Rundown Acara</h2>
+                <div class="separator center"></div>
+                
+                <div class="grid-3 rundown-grid">
+                    <div class="rundown-card reveal-stagger">
+                        <h3 class="rundown-day">Hari 1</h3>
+                        <div class="rundown-date">Jumat, 12 Juni 2026</div>
+                        <ul class="rundown-list">
+                            <li><span class="time">16:00 WITA</span> Pembukaan Pameran</li>
+                            <li><span class="time">19:00 WITA</span> Lelang Karya</li>
+                            <li><span class="time">19:00 WITA</span> Jamming Musik</li>
+                        </ul>
+                    </div>
+
+                    <div class="rundown-card reveal-stagger">
+                        <h3 class="rundown-day">Hari 2</h3>
+                        <div class="rundown-date">Sabtu, 13 Juni 2026</div>
+                        <ul class="rundown-list">
+                            <li><span class="time">08:00 WITA</span> Pameran Dibuka</li>
+                            <li><span class="time">08:00–13:00 WITA</span> Kunjungan Sekolah</li>
+                            <li><span class="time">16:00 WITA</span> Live Painting</li>
+                            <li><span class="time">19:00 WITA</span> Nobar Film</li>
+                            <li><span class="time">20:30 WITA</span> Lelang Lukisan</li>
+                        </ul>
+                    </div>
+
+                    <div class="rundown-card reveal-stagger">
+                        <h3 class="rundown-day">Hari 3</h3>
+                        <div class="rundown-date">Minggu, 14 Juni 2026</div>
+                        <ul class="rundown-list">
+                            <li><span class="time">10:00 WITA</span> Pameran Dibuka</li>
+                            <li><span class="time">18:00 WITA</span> Jamming Musik</li>
+                            <li><span class="time">20:00 WITA</span> Undian Door Prize</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="denah" class="section reveal">
+            <div class="container text-center">
+                <h2 class="section-title">Denah Pameran & Booth</h2>
+                <div class="separator center"></div>
+                
+                <div class="denah-wrapper reveal-stagger">
+                    <img src="images/denah.jpg" alt="Denah Kompleks Pameran" class="denah-img" loading="lazy">
+                    <p class="denah-caption mt-2">Keterangan area pameran, booth sponsor, registrasi, diskusi, dan fasilitas umum.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p>Aula Paroki St. Rafael Nita</p>
+                    <ul class="contact-channels mt-2">
+                        <li>WhatsApp</li>
+                        <li>Email</li>
+                    </ul>
+                    <div class="social-links mt-2">
+                        <a href="INSERT_INSTAGRAM_URL_HERE" target="_blank" rel="noopener noreferrer" aria-label="Ikuti kami di Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            <span class="instagram-label">Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Penyelenggara</h4>
+                    <p class="mb-2">Kelan Kirek</p>
+                    <div class="logo-grid-small single-logo-wrapper">
+                        <img src="images/logo-kelan-kirek.png" alt="Logo Utama Kelan Kirek" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Kontributor</h4>
+                    <div class="logo-grid-small">
+                        <img src="images/logo1.png" alt="Kontributor 1" loading="lazy">
+                        <img src="images/logo2.png" alt="Kontributor 2" loading="lazy">
+                        <img src="images/logo3.png" alt="Kontributor 3" loading="lazy">
+                        <img src="images/logo4.png" alt="Kontributor 4" loading="lazy">
+                        <img src="images/logo5.png" alt="Kontributor 5" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Media Partner</h4>
+                    <div class="logo-grid-small">
+                        <img src="images/media1.png" alt="Media Partner 1" loading="lazy">
+                        <img src="images/media2.png" alt="Media Partner 2" loading="lazy">
+                        <img src="images/media3.png" alt="Media Partner 3" loading="lazy">
+                        <img src="images/media4.png" alt="Media Partner 4" loading="lazy">
+                        <img src="images/media5.png" alt="Media Partner 5" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Sponsor</h4>
+                    <div class="logo-grid-small">
+                        <img src="images/sponsor1.png" alt="Sponsor 1" loading="lazy">
+                        <img src="images/sponsor2.png" alt="Sponsor 2" loading="lazy">
+                        <img src="images/sponsor3.png" alt="Sponsor 3" loading="lazy">
+                        <img src="images/sponsor4.png" alt="Sponsor 4" loading="lazy">
+                        <img src="images/sponsor5.png" alt="Sponsor 5" loading="lazy">
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom mt-4 text-center">
+                <p>&copy; 2026 Kelan Kirek Exhibition. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
