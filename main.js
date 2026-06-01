@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
-    window.addEventListener('scroll', highlightNav, { passive: true });
+
 
     // ==========================================
     // 5. COUNTDOWN TIMER (TARGET: 12 JUNI 2026, 16:00 WITA)
