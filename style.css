@@ -1,335 +1,337 @@
-:root {
-  --pink: #f14e95;
-  --bg: #0a0a0a;
-  --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
-}
 
-body {
-  font-size: 1.2rem;
-  font-family: "Work Sans", sans-serif;
-  min-height: 4000px;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(img/download\ \(20\).jpeg);
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  filter: brightness(0.5);
-}
-
-.hero h4, .hero h1, .hero p {
-  text-shadow: var(--shadow);
-}
-
-#hero {
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  position: relative;
-}
-
-.hero h1 {
-  font-family: "Sacramento", cursive;
-  font-size: 4rem;
-}
-
-.hero h4 {
-  font-size: 1.6rem;
-}
-
-.hero p {
-  font-size: 1rem;
-}
-
-.hero a {
-  background-color: white;
-  color: var(--pink);
-  box-shadow: var(--shadow);
-}
-
-.hero a:hover {
-  background-color: var(--pink);
-  color: white;
-}
-.mynavbar {
-  background-color: rgba 225, 225, 225, 1 !important;
-  backdrop-filter: blur(4px);
-}
-.mynavbar .offcanvas {
-  height: 100vh;
-}
-.mynavbar .navbar-brand, .mynavbar .offcanvas-title {
-  font-family: 'sacramento', cursive;
-  font-size: 2rem;
-  font-weight: bold;
-}
-.mynavbar .nav-link{
-  font-weight: 400;
-  text-transform: uppercase;
-}
-.home {
-background-image: url(img/backkk.jpeg);
-background-size: cover;
-background-position: center;
-min-height: 100vh;
-margin-top: 6rem;
-padding-top: 15rem;
-padding-bottom: 5rem;
-filter: opacity(1);
-}
-.home h2 , .rsvp h2{
-  color:var(--pink);
-  font-size: 3rem;
-  font-weight: bold;
-  color: #222;
-  font-family: "Sacramento", cursive;
-}
-.home h3 {
-color: black;
-font-size: 1rem;
-margin-bottom: 1rem;
-}
-.home p {
-  color:black;
-  font-size: 0.8rem;
-  margin-top: 2rem;
-}
-.home .couple {
-  margin-top: 100px;
-
-
-}
-.home .couple h3 {
-  font-family: "Sacramento", cursive;
-  font-size: 2rem;
-  color: black;
-  margin-top: 1rem;
-}
-.home .couple img{
-  width: 100%;
-}
-
-.info {
-  background-color: #222;
-  color:white;
-  font-family: "TASA Explorer", sans-serif;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-.info h2 {
-  color: var(--pink);
-  font-family: sacramento;
-  font-size: 3rem;
-  font-weight: bold;
-}
-.info p {
-    font-family: "Work Sans", sans-serif ;
-}
-.info p2 {
-  font-size: 0.8rem;
-}
-.info .alamat{
-  font-size: 1.1rem;
-}
-
-.info .description{
-  font-size: 1rem;
-  font-weight: 200rem;
-}
-.info .card{
-  background-color: rgba(112, 112, 112, 0.326) !important;
-  color: white !important;
-  border: 1px solid #f14e95;
-}
-.info .card-header {
-  border: 1px solid #f14e95;
-  border-bottom: 1px solid #f14e95;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-}
-.info .card-body{
-  font-size: 1rem;
-}
-.info .card-footer{
-  border-top: 1px solid #f14e95;
-  font-size: 1rem;
-  font-weight: 400;
-}
-.gallery{
-  background-color:#fdcda3 ;
-  margin-top: 2rem;
-  padding-top: 8rem;
-  padding-bottom: 6rem;
-}
-.gallery span{
-  text-transform: uppercase;
-  color:#222;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  display: block;
-  margin-bottom: 1rem;
-}
-.gallery h2 {
-  color: var(--pink);
-  font-family: sacramento;
-  font-size: 4rem;
-  font-weight: bold;
-}
-.gallery p, .rsvp p{
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-/* footer */
-
-footer{
-  padding: 3rem;
-  background-color: #333;
-  color:white;
-  border-top: #fdcda3 10px solid;
-}
-footer a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-}
-footer a:hover{
-  color: white;
-}
-footer li{
-  list-style: none;
-  display: inline;
-  margin: 0.5rem;
-}
-
-/* aud */
-
-.audio-icon-wrapper {
-  width:4rem;
-  height: 4rem;
-  font-size: 4rem;
-  position: fixed;
-  bottom: 2.5rem;
-  right: 2rem;
-  cursor: pointer;
-  color: white;
-  opacity: 0.5;
-  mix-blend-mode: difference;
-  animation: rotating 4s linear infinite;
-  transform-origin: center ;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 0
-}
-
-@keyframes rotating {
-  from{
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-
-.rsvp {
-padding-top: 10rem;
-padding-bottom: 8rem;
-background-color: #333 ;
-}
-.rsvp h2 {
-  color: var(--pink);
-  font-family: sacramento;
-  font-size: 3rem;
-  font-weight: bold;
-}
-.rsvp p {
-  color: white;
-  font-weight: 300;
-  font-size: 1rem;
-}
-.rsvp form label{
-  margin-top: 2rem;
-  color: white;
-}
-.rsvp button{
-  background-color: var(--pink);
-  color: white;
-  font-weight: bold;
-}
-.rsvp button:hover{
-  background-color: white;
-  color: var(--pink);
-  font-weight: bold;
-}
-/* ================== MEDIA QUERY ================== */
-
-/* Laptop */
-@media (max-width: 992px) {
-  html {
-    font-size: 95%;
-  }
-  .simply-countdown > .simply-section {
-    padding: 40px;  
-  }
-  .simply-countdown .simply-amount {
-    font-size: 2rem;
-  }
-  .simply-countdown .simply-word {
-    font-size: 1rem;
-  }
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .simply-countdown > .simply-section {
-    width: 70px;      
-    height: 70px;
-    padding: 12px;
-    margin: 5px;
-  }
-  .mynavbar .nav-link{
-  font-size: 2rem;
-  text-align: center;
-}
-  .simply-countdown .simply-amount {
-    font-size: 1rem;
-  }
-  .simply-countdown .simply-word {
-    font-size: 0.7rem;
-  }
-  .sticky-top{
-    overflow: hidden;
-  }
-}
-
-/* HP */
-@media (max-width: 576px) {
-  .simply-countdown > .simply-section {
-    width: 55px;      
-    height: 55px;
-    padding: 8px;
-    margin: 3px;
-  }
-  .simply-countdown .simply-amount {
-    font-size: 0.9rem;
-  }
-  .simply-countdown .simply-word {
-    font-size: 0.6rem;
-  }
-    .sticky-top{
-    overflow: hidden
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     
 }
 
+html{
+    scroll-behavior:smooth;
 
+}
+
+body{
+    font-family: "Diogenes", sans-serif;
+    line-height:1.7;
+    color:#222;
+    background:#fcb017;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+nav{
+    background:#111;
+    color:#fcb017;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:1rem;
+    padding:1rem;
+}
+
+nav a{
+    color:#fcb017;
+    font-size:.95rem;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d5a710;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    min-height:80vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:#111;
+    color:white;
+
+    padding:2rem;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:1rem;
+}
+
+.hero h2{
+    color:#d4af37;
+    font-weight:300;
+    margin-bottom:1rem;
+}
+
+.hero-info{
+    margin-top:1rem;
+}
+
+.hero-info p{
+    margin:.3rem 0;
+}
+
+/* ==========================
+   SECTION UMUM
+========================== */
+
+section{
+    padding:5rem 0;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:2rem;
+    font-size:2rem;
+    color:#111;
+}
+
+section p{
+    margin-bottom:1rem;
+}
+
+/* ==========================
+   SENIMAN
+========================== */
+
+.artist-grid{
+    display:grid;
+    gap:2rem;
+}
+
+.artist-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+}
+
+.artist-card img{
+    aspect-ratio:1/1;
+    object-fit:cover;
+}
+
+.artist-card h3{
+    padding:1rem 1rem .5rem;
+}
+
+.artist-card p{
+    padding:0 1rem 1rem;
+}
+
+/* ==========================
+   INFO
+========================== */
+
+iframe{
+    border:none;
+    border-radius:12px;
+    margin-top:1rem;
+}
+
+#info ul{
+    margin-top:1rem;
+}
+
+#info li{
+    padding:.5rem 0;
+}
+
+/* ==========================
+   TABLE RUNDOWN
+========================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+
+    overflow:hidden;
+    border-radius:12px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+}
+
+th{
+    background:#111;
+    color:white;
+}
+
+th,
+td{
+    padding:1rem;
+    text-align:left;
+    border:1px solid #ddd;
+}
+
+/* ==========================
+   DENAH
+========================== */
+
+#denah img{
+    border-radius:12px;
+    margin-bottom:1.5rem;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.1);
+}
+
+/* ==========================
+   FAQ
+========================== */
+
+details{
+    background:white;
+
+    margin-bottom:1rem;
+    padding:1rem;
+
+    border-radius:10px;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,.08);
+}
+
+summary{
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* ==========================
+   KONTAK
+========================== */
+
+#kontak{
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+#kontak h2{
+    color:#d4af37;
+}
+
+#kontak p{
+    margin:.5rem 0;
+}
+
+/* ==========================
+   FOOTER LOGO
+========================== */
+
+.logo-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:1rem;
+    align-items:center;
+}
+
+.logo-grid img{
+    background:white;
+    padding:1rem;
+    border-radius:10px;
+}
+
+.single-logo{
+    max-width:180px;
+    margin:auto;
+}
+
+/* ==========================
+   TABLET
+========================== */
+.hero{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.5)
+    ),
+    url("background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media(min-width:768px){
+
+    .hero h1{
+        font-size:4rem;
+    }
+
+    .artist-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .logo-grid{
+        grid-template-columns:
+        repeat(4,1fr);
+    }
+
+}
+
+/* ==========================
+   DESKTOP
+========================== */
+
+@media(min-width:1024px){
+
+    .artist-grid{
+        grid-template-columns:
+        repeat(4,1fr);
+    }
+
+    .logo-grid{
+        grid-template-columns:
+        repeat(5,1fr);
+    }
+
+    .hero h1{
+        font-size:5rem;
+    }
+
+}
