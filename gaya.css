@@ -1,3 +1,22 @@
+/* Tambahkan ini di bagian paling atas file gaya.css Anda */
+@font-face {
+    font-family: 'Diogenes';
+    src: url('fonts/diogenes.woff2') format('woff2'),
+         url('fonts/diogenes.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+    /* ... variabel warna tetap sama ... */
+
+    /* Menjadikan Cormorant Garamond sebagai font serif utama yang dijamin konsisten di semua layar */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'DM Sans', sans-serif;
+
+    --nav-height: 70px;
+    --container-padding: 1.5rem;
+}
 /* ==========================================================================
    DESIGN SYSTEM VARIABLES
    ========================================================================== */
@@ -660,7 +679,8 @@ h1, h2, h3, h4 {
 .logo-grid-small img {
     height: 35px;
     width: auto;
-    filter: grayscale(100%) opacity(0.6);
+    filter: none;
+    opacity: none;
 }
 
 .single-logo-wrapper img {
@@ -721,6 +741,228 @@ h1, h2, h3, h4 {
 .reveal.active, .reveal-stagger.active {
     opacity: 1;
     transform: translateY(0);
+}
+/* ==========================================================================
+   PERBAIKAN STRUKTUR KONTAK & LAYOUT SEJAJAR
+   ========================================================================== */
+.contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Mengatur wadah utama ikon dan teks agar lurus rata kiri */
+.contact-label-wrapper, 
+.contact-label-wrapper a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Jarak yang sama seperti ikon instagram */
+    color: var(--text-muted);
+}
+
+.contact-title {
+    font-size: 0.9rem;
+}
+
+.contact-icon {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+/* Penataan sub-list nomor di bawah tulisan WhatsApp */
+.contact-sub-list {
+    margin-left: calc(20px + 0.5rem); /* Menggeser teks ke kanan sejajar dengan huruf WhatsApp */
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.contact-sub-list li a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: block;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efek Hover untuk interaksi link kontak */
+.contact-sub-list li a:hover,
+.email-link:hover,
+.email-link:hover .contact-icon {
+    color: var(--gold);
+}
+
+.contact-item-group:hover .contact-icon {
+    color: var(--gold);
+}
+/* 
+/* ==========================================================================
+   PENYESUAIAN FONT & WARNA JUDUL FOOTER (SAMA SEPERTI NAVIGASI)
+   ========================================================================== */
+
+/* Mengubah semua h4 di dalam footer menjadi kuning emas dan menggunakan font pameran */
+.footer-layout-flexible h4 {
+    font-family: var(--font-serif); /* Menggunakan font Diogenes / Cormorant Garamond */
+    color: var(--gold);            /* Mengubah warna menjadi kuning emas */
+    font-size: 1.1rem;             /* Ukuran relatif kecil dan pas untuk sub-judul footer */
+    font-weight: 600;
+    text-transform: none;          /* Menjaga teks tetap natural (bukan kapital semua) */
+    letter-spacing: 0.05em;        /* Memberikan sedikit jarak estetis antar huruf */
+    margin-bottom: 1rem;           /* Jarak aman ke area konten di bawahnya */
+}
+
+/* Jika Anda ingin tulisan "Kontak" juga ikut berubah dengan gaya yang sama */
+.col-kontak h4 {
+    font-family: var(--font-serif);
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+/* Layout Dasar (Mobile & Default) */
+.footer-layout-flexible {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+}
+
+.footer-col {
+    width: 100%;
+}
+
+/* Kolom 1: Kontak Link */
+.location-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contact-label-wrapper, 
+.contact-label-wrapper a,
+.social-links-fixed a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.contact-title {
+    font-size: 0.9rem;
+}
+
+.contact-icon {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+.contact-sub-list {
+    margin-left: calc(20px + 0.6rem);
+    margin-top: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    list-style: none;
+}
+
+.contact-sub-list li a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects Kontak */
+.contact-sub-list li a:hover,
+.email-link:hover,
+.social-links-fixed a:hover,
+.email-link:hover .contact-icon,
+.social-links-fixed a:hover .contact-icon {
+    color: var(--gold);
+}
+
+/* Kolom 2: Penyelenggara */
+.center-logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.center-logo-box img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Kolom 3: Susunan Baris Partner */
+.partner-row-segment {
+    margin-bottom: 2rem;
+}
+
+.partner-row-segment:last-child {
+    margin-bottom: 0;
+}
+
+.partner-row-segment h4 {
+    margin-bottom: 0.8rem;
+}
+
+.logo-row-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Layar kecil: 2 kolom logo */
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.logo-row-grid img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+    filter: none;
+    opacity: 1;
+}
+
+/* LAYOUT DESTOP PC (Lebar layar mulai dari 1024px ke atas) */
+@media (min-width: 1024px) {
+    .footer-layout-flexible {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    /* Membagi 3 kolom sama rata sesuai sketsa */
+    .col-kontak {
+        width: 25%;
+        text-align: left;
+    }
+
+    .col-penyelenggara {
+        width: 30%;
+        text-align: center;
+    }
+
+    .col-mitra {
+        width: 40%;
+        text-align: left;
+    }
+
+    /* Memaksa baris mitra sejajar horizontal berisi 4 logo per baris */
+    .logo-row-grid {
+        grid-template-columns: repeat(4, max-content);
+        gap: 1.5rem;
+    }
 }
 
 /* ==========================================================================
