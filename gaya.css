@@ -899,10 +899,19 @@ h1, h2, h3, h4 {
     margin-top: 1rem;
 }
 
+/* KODE BARU */
 .center-logo-box img {
-    height: 60px;
+    height: 40px; /* Ukuran lebih kecil untuk layar handphone (Mobile default) */
     width: auto;
     object-fit: contain;
+    transition: height 0.3s ease;
+}
+
+/* Ukuran otomatis membesar ketika dibuka di layar laptop / komputer (PC) */
+@media (min-width: 1024px) {
+    .center-logo-box img {
+        height: 60px; /* Kembali ke ukuran ideal untuk tampilan desktop */
+    }
 }
 
 /* Kolom 3: Susunan Baris Partner */
