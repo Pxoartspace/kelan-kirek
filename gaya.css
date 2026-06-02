@@ -1,3 +1,18 @@
+/* ==========================================================================
+   PERBAIKAN FONT FOOTER UNTUK SEMUA PERANGKAT (HP & LAPTOP)
+   ========================================================================== */
+
+/* Memaksa semua judul di dalam footer menggunakan font serif pameran yang universal */
+.footer-layout-flexible h4,
+.col-kontak h4 {
+    font-family: "Cormorant Garamond", Garamond, Georgia, "Times New Roman", serif !important;
+    color: var(--gold) !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 1rem !important;
+}
 /* Tambahkan ini di bagian paling atas file gaya.css Anda */
 @font-face {
     font-family: 'Diogenes';
