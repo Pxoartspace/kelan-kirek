@@ -7,10 +7,13 @@
     font-style: normal;
     font-display: swap;
 }
-:root {
-    /* ... variabel warna tetap sama ... */
 
-    /* Menjadikan Cormorant Garamond sebagai font serif utama yang dijamin konsisten di semua layar */
+:root {
+    font-serief: 'Diogenes', 'Cormorant Garamond', Georgia, serif;
+    font-sans: 'DM Sans', sans-serif; 
+    nav-height: 70px;
+    container-padding: 1.5rem;
+
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'DM Sans', sans-serif;
 
