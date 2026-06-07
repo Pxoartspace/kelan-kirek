@@ -1,7 +1,12 @@
-/* ==========================================================================
-   PERBAIKAN FONT FOOTER UNTUK SEMUA PERANGKAT (HP & LAPTOP)
-   ========================================================================== */
-
+.footer-col h5 {
+    font-family:'Courier New', Courier, monospace;
+    color: var(--gold);
+}
+.thanks-segment h3 {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+}
 /* Memaksa semua judul di dalam footer menggunakan font serif pameran yang universal */
 .footer-layout-flexible h4,
 .col-kontak h4 {
@@ -643,14 +648,11 @@ h1, h2, h3, h4 {
 }
 
 .denah-img {
+    inline-size: 400px 300px;
+    size: contain;
     width: 100%;
 }
 
-.denah-caption {
-    font-family: var(--font-sans);
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
 
 /* ==========================================================================
    FOOTER CORES
